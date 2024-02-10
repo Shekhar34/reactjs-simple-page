@@ -1,9 +1,10 @@
-import { useState, useSyncExternalStore } from 'react';
+import React ,{ useState} from 'react';
 import './App.css';
 import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
-// import About from './components/About';
+import About from './components/About';
+import { BrowserRouter as Router,Route, Switch} from 'react-router-dom';
 function App() {
   
   const[mode,setMode]=useState('light');
@@ -36,13 +37,23 @@ function App() {
 
   return (
     <>
-   <Navbar title="my-app " abouttxt="about us" mode={mode} toggleMode={toggleMode}/>  
+    <Router>
+   <Navbar title="my-app " abouttxt="about" mode={mode} toggleMode={toggleMode}/>  
    <Alert alert={alert}/>
   <div className="container my-3"> 
-       <Textform showAlert={showAlert} heading="Enter text to analyze" mode={mode}/>
-
-       {/* <About /> */}
-  </div>
+        <Switch>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/">
+          <Textform showAlert={showAlert} heading="Enter text to analyze" mode={mode}/>
+        </Route>
+         
+        </Switch>
+       
+      {/* <About/> */}
+</div>
+  </Router>
  
  
     </>
