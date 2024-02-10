@@ -37,7 +37,6 @@ function App() {
 
   return (
     <>
-
    <Navbar title="my-app " abouttxt="about" mode={mode} toggleMode={toggleMode}/>  
    <Alert alert={alert}/>
   <div className="container my-3"> 
@@ -46,7 +45,7 @@ function App() {
             <About />
           </Route>
           <Route path="/">
-          <Textform showAlert={showAlert} heading="Enter text to analyze" mode={mode}/>
+          <Textform showAlert={showAlert} heading="text utils - word counter, uppercase, lowercase " mode={mode}/>
         </Route>
          
         </Switch>
