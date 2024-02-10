@@ -4,7 +4,7 @@ import Navbar from './components/Navbar';
 import Textform from './components/Textform';
 import Alert from './components/Alert';
 import About from './components/About';
-import { BrowserRouter as Router,Route, Switch} from 'react-router-dom';
+import { Route, Switch} from 'react-router-dom';
 function App() {
   
   const[mode,setMode]=useState('light');
@@ -37,7 +37,7 @@ function App() {
 
   return (
     <>
-    <Router>
+
    <Navbar title="my-app " abouttxt="about" mode={mode} toggleMode={toggleMode}/>  
    <Alert alert={alert}/>
   <div className="container my-3"> 
@@ -53,7 +53,7 @@ function App() {
        
       {/* <About/> */}
 </div>
-  </Router>
+
  
  
     </>
